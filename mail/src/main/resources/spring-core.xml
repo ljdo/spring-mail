@@ -11,4 +11,25 @@
 		<context:exclude-filter type="annotation"
 								expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.qq.com"/>
+		<property name="port" value="25" />
+		<property name="username" value="xxxx@qq.com" />
+		<property name="password" value="xxxx" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 这是一个可以预加载默认状态的模板信息 -->
+	<bean id="templateMessage" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="2507868527@qq.com"/>
+		<property name="subject" value="ljdo to send you email"/>
+	</bean>
+
 </beans>
