@@ -1,4 +1,4 @@
-package com.ljdo.service.impl;
+package com.ljdo.service.MailSender.impl;
 
 import com.ljdo.service.OrderService;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  * @author fly
  * @create 2016-01-06 0:29
  */
-@Service
+/*@Service*/
 public class OrderServiceImpl implements OrderService{
 
     private static Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
@@ -43,6 +43,8 @@ public class OrderServiceImpl implements OrderService{
 
         //生成订单流程实现
 
+        log.debug("进入MailSender邮件发送:");
+
         //通知客户，发送邮件
         //给模板信息和自定义内容创建一个线程安全的‘副本’
         SimpleMailMessage msg = new SimpleMailMessage(this.templateMessage);
@@ -53,7 +55,7 @@ public class OrderServiceImpl implements OrderService{
         try {
             this.mailSender.send(msg);
         } catch (MailException e) {
-            log.error("邮件发送异常：" + e.getMessage());
+            log.error("MailSender邮件发送异常：" + e.getMessage());
         }
 
     }

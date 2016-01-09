@@ -15,8 +15,8 @@
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.qq.com"/>
 		<property name="port" value="25" />
-		<property name="username" value="xxxx@qq.com" />
-		<property name="password" value="xxxx" />
+		<property name="username" value="2507868527@qq.com" />
+		<property name="password" value="lijian418" />
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.transport.protocol">smtp</prop>

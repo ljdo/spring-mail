@@ -22,5 +22,4 @@ public class ServiceTest extends AbstractJUnit4SpringContextTests{
     public void test01(){
         orderService.placeOrder();
     }
-
 }
