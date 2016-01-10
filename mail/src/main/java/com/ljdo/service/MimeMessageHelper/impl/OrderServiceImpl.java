@@ -28,8 +28,8 @@ public class OrderServiceImpl implements OrderService{
             JavaMailSenderImpl sender = new JavaMailSenderImpl();
             sender.setHost("smtp.qq.com");//主机
             sender.setPort(25);//端口号
-            sender.setUsername("2507868527@qq.com");//用户名
-            sender.setPassword("lijian418");//密码
+            sender.setUsername("xxxxxx@qq.com");//用户名
+            sender.setPassword("xxxxx");//密码
             Properties properties = new Properties();
             properties.put("mail.transport.protocol","smtp");
             properties.put("mail.smtp.auth",true);
@@ -39,8 +39,8 @@ public class OrderServiceImpl implements OrderService{
             MimeMessage message = sender.createMimeMessage();
             // 你需要使用true作为标记来指出你多条信息所需要发送的内容,比如：附件、图片
             MimeMessageHelper helper = new MimeMessageHelper(message,true);
-            helper.setTo("ljdo.lj@gmail.com");//目的地
-            helper.setFrom("2507868527@qq.com");//出发地
+            helper.setTo("xxx@gmail.com");//目的地
+            helper.setFrom("xxx@qq.com");//出发地
             //helper.setText("Thank you for ordering!");//发送内容
 
             // 使用true作为标间指出文本包含的是HTML

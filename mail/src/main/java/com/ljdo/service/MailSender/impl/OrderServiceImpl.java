@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService{
     @Resource
     private SimpleMailMessage templateMessage;
 
-    private String msgTo  = "guidao418@gmail.com";
+    private String msgTo  = "xxxx@gmail.com";
 
     public void setMailSender(MailSender mailSender) {
         this.mailSender = mailSender;

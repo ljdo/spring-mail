@@ -15,8 +15,8 @@
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.qq.com"/>
 		<property name="port" value="25" />
-		<property name="username" value="2507868527@qq.com" />
-		<property name="password" value="lijian418" />
+		<property name="username" value="xxx@qq.com" />
+		<property name="password" value="xxxxxx" />
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.transport.protocol">smtp</prop>
@@ -28,8 +28,18 @@
 
 	<!-- 这是一个可以预加载默认状态的模板信息 -->
 	<bean id="templateMessage" class="org.springframework.mail.SimpleMailMessage">
-		<property name="from" value="2507868527@qq.com"/>
+		<property name="from" value="xxx@qq.com"/>
 		<property name="subject" value="ljdo to send you email"/>
+	</bean>
+
+	<!-- 解析Velocity模板文件 必须-->
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<value>
+				resource.loader=class
+				class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+			</value>
+		</property>
 	</bean>
 
 </beans>

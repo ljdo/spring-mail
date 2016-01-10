@@ -18,7 +18,7 @@ import javax.mail.internet.MimeMessage;
  * @author fly
  * @create 2016-01-09 17:33
  */
-@Service
+/*@Service*/
 public class OrderServiceImpl implements OrderService{
 
     private  static Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
@@ -35,8 +35,8 @@ public class OrderServiceImpl implements OrderService{
         //组装邮件对象
         MimeMessagePreparator preparator = new MimeMessagePreparator() {
             public void prepare(MimeMessage mimeMessage) throws Exception {
-                mimeMessage.setRecipient(Message.RecipientType.TO,new InternetAddress("ljdo.lj@gmail.com"));
-                mimeMessage.setFrom(new InternetAddress("642795365@qq.com"));
+                mimeMessage.setRecipient(Message.RecipientType.TO,new InternetAddress("xxxxx@gmail.com"));
+                mimeMessage.setFrom(new InternetAddress("xxx@qq.com"));
                 mimeMessage.setText("这是使用spring-mail工具类发送邮件的哦!");
             }
         };
